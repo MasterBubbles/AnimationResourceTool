@@ -104,9 +104,6 @@ $sortedMods = $mods | Sort-Object Id
 # Split the comma-separated mod IDs into an array and sort them
 $selectedModIds = $modIDs -split ',' | ForEach-Object { [int]$_ } | Sort-Object
 
-# Create a directory for the selected combination
-$outputDir = Join-Path $modPath "A_A_Multiple_Animation_Mods" 
-
-# Call CreatePatch with $selectedModIds and $outputDir
+# Call CreatePatch with $selectedModIds and $modPath
 CreatePatch $selectedModIds $modPath
 
